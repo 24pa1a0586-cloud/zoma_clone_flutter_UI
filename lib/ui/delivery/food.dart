@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:zoma_clone_flutter/constant/colors.dart';
 import 'package:zoma_clone_flutter/constant/textstyles.dart';
 import 'package:zoma_clone_flutter/widgets/rating.dart';
@@ -11,7 +10,8 @@ class FoodTab extends StatefulWidget {
 }
 
 class _FoodTabState extends State<FoodTab> {
-  double rating = 3.5;
+  double rating1 = 3.5;
+  double rating2 = 3.5;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -229,7 +229,7 @@ class _FoodTabState extends State<FoodTab> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     Icon(
-                                      FontAwesome.filter,
+                                      Icons.filter_list,
                                       size: 18,
                                       color: AppColors.primaryTextColorGrey,
                                     ),
@@ -449,8 +449,8 @@ class _FoodTabState extends State<FoodTab> {
                 children: <Widget>[
                   Center(
                     child: Container(
-                      constraints:
-                          new BoxConstraints.expand(height: 200.0, width: 450),
+                      height: 200.0,
+                      width: double.infinity,
                       alignment: Alignment.bottomLeft,
                       padding:
                           new EdgeInsets.only(left: 16.0, bottom: 8.0, top: 8.0),
@@ -476,7 +476,7 @@ class _FoodTabState extends State<FoodTab> {
                                 decoration: BoxDecoration(
                                     color: AppColors.persianColor,
                                     borderRadius: BorderRadius.circular(5.0)),
-                                child: new Text('Well sanized kitchen',
+                                child: new Text('Well sanitized kitchen',
                                     style: new TextStyle(
                                         fontSize: 12.0,
                                         color: AppColors.whiteColor)),
@@ -525,12 +525,12 @@ class _FoodTabState extends State<FoodTab> {
                           child: Row(
                             children: <Widget>[
                               new StarRating(
-                                rating: rating,
+                                rating: rating1,
                                 onRatingChanged: (rating) =>
-                                    setState(() => this.rating = rating),
+                                    setState(() => this.rating1 = rating),
                               ),
                               SizedBox(width: 3.0,),
-                              Text('3.5',style: TextStyles.paragraphBold,),
+                              Text(rating1.toStringAsFixed(1),style: TextStyles.paragraphBold,),
                               SizedBox(width: 3.0,),
                               Text('(5548 Delivery Reviews)',style: TextStyles.paragraphdemibold,)
                             ],
@@ -571,8 +571,8 @@ class _FoodTabState extends State<FoodTab> {
                 children: <Widget>[
                   Center(
                     child: Container(
-                      constraints:
-                      new BoxConstraints.expand(height: 200.0, width: 450),
+                      height: 200.0,
+                      width: double.infinity,
                       alignment: Alignment.bottomLeft,
                       padding:
                       new EdgeInsets.only(left: 16.0, bottom: 8.0, top: 8.0),
@@ -634,12 +634,12 @@ class _FoodTabState extends State<FoodTab> {
                           child: Row(
                             children: <Widget>[
                               new StarRating(
-                                rating: rating,
+                                rating: rating2,
                                 onRatingChanged: (rating) =>
-                                    setState(() => this.rating = rating),
+                                    setState(() => this.rating2 = rating),
                               ),
                               SizedBox(width: 3.0,),
-                              Text('3.5',style: TextStyles.paragraphBold,),
+                              Text(rating2.toStringAsFixed(1),style: TextStyles.paragraphBold,),
                               SizedBox(width: 3.0,),
                               Text('(52 Delivery Reviews)',style: TextStyles.paragraphdemibold,)
                             ],

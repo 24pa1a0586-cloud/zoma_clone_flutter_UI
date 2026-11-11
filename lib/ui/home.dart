@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:zoma_clone_flutter/constant/colors.dart';
 import 'package:zoma_clone_flutter/constant/textstyles.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:zoma_clone_flutter/ui/profile/fifth.dart';
 import 'package:zoma_clone_flutter/ui/delivery/first.dart';
 import 'package:zoma_clone_flutter/ui/explore/fourth.dart';
-import 'package:zoma_clone_flutter/ui/dinein/second.dart';
+import 'package:zoma_clone_flutter/ui/dineIn/second.dart';
 import 'package:zoma_clone_flutter/ui/Progold/third.dart';
 import 'package:zoma_clone_flutter/widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  static List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     FirstPage(),
     SecondPage(),
     ThirdPage(),
@@ -31,41 +32,30 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   @override
-  void initState() {
-    super.initState();
-
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: AppColors.whiteColor,
-        items:  <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(FontAwesome.shopping_bag),
-            title: Text('Order'),
+            icon: Icon(Icons.shopping_bag_outlined),
+            label: 'Order',
           ),
           BottomNavigationBarItem(
-            icon: Icon(MaterialCommunityIcons.shoe_print),
-            title: Text('Go Out'),
+            icon: Icon(Icons.directions_walk),
+            label: 'Go Out',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
-            title: Text('Gold'),
+            label: 'Gold',
           ),
           BottomNavigationBarItem(
-            icon: Icon(SimpleLineIcons.compass),
-            title: Text('Explore'),
+            icon: Icon(Icons.explore_outlined),
+            label: 'Explore',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            title: Text('Profile'),
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedIndex,
@@ -77,69 +67,64 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         onTap: _onItemTapped,
       ),
       body: SafeArea(
-        child: _selectedIndex==2||_selectedIndex==4?Container(child:_widgetOptions.elementAt(_selectedIndex),) :Container(
-          color: AppColors.whiteColor,
-          padding: EdgeInsets.all(10),
-          child: Column(
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 15.0, right: 10),
-                      child: Icon(
-                        SimpleLineIcons.location_pin,
-                        size: 35,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 5,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'Home',
-                            textAlign: TextAlign.left,
-                            style: TextStyles.actionTitle,
+        child: _selectedIndex == 2 || _selectedIndex == 4
+            ? Container(
+                child: _widgetOptions.elementAt(_selectedIndex),
+              )
+            : Container(
+                color: AppColors.whiteColor,
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        const Padding(
+                          padding: EdgeInsets.only(bottom: 15.0, right: 10),
+                          child: Icon(
+                            Icons.location_on_outlined,
+                            size: 35,
                           ),
-                          Text(
-                            'MG Road Bangalore',
-                            textAlign: TextAlign.left,
-                            style: TextStyles.subText,
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const <Widget>[
+                                Text(
+                                  'Home',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyles.actionTitle,
+                                ),
+                                Text(
+                                  'MG Road Bangalore',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyles.subText,
+                                ),
+                                Divider(
+                                  color: AppColors.blackColor,
+                                )
+                              ],
+                            ),
                           ),
-                          Divider(
-                            color: AppColors.blackColor,
-                          )
-                        ],
-                      ),
+                        ),
+                        const SizedBox(width: 12),
+                        const Icon(
+                          Icons.payment,
+                          color: AppColors.blackColor,
+                          size: 25,
+                        ),
+                      ],
                     ),
-                  ),
-                  Expanded(
-                    flex: 5,
-                    child: Container(),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Icon(
-                      Icons.payment,
-                      color: AppColors.blackColor,
-                      size: 25,
+                    const AppSearchBar('Search for restaurants, cuisines...'),
+                    Expanded(
+                      child: _widgetOptions.elementAt(_selectedIndex),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              SearchBar('Search for restaurants, Cusines...'),
-              _widgetOptions.elementAt(_selectedIndex),
-
-            ],
-          ),
-        ),
       ),
     );
   }

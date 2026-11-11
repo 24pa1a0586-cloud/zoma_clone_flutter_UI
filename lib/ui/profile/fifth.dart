@@ -1,4 +1,3 @@
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:zoma_clone_flutter/constant/colors.dart';
 import 'package:zoma_clone_flutter/constant/textstyles.dart';
@@ -51,21 +50,21 @@ class _FifthPageState extends State<FifthPage> {
                 children: <Widget>[
                   Column(
                     children: <Widget>[
-                      Icon(Feather.bookmark),
+                      Icon(Icons.bookmark_border),
                       SizedBox(height: 5,),
                       Text('Bookmarks')
                     ],
                   ),
                   Column(
                     children: <Widget>[
-                      Icon(Feather.bell),
+                      Icon(Icons.notifications_none),
                       SizedBox(height: 5,),
                       Text('Notifications')
                     ],
                   ),
                   Column(
                     children: <Widget>[
-                      Icon(Feather.settings),
+                      Icon(Icons.settings_outlined),
                       SizedBox(height: 5,),
                       Text('Settings')
                     ],
@@ -87,41 +86,41 @@ class _FifthPageState extends State<FifthPage> {
               Divider(),
               Text('Food Orders',style: TextStyles.actionTitleBlack,),
               ListTile(
-                leading: Icon(Feather.shopping_bag,color: Colors.black,),
+                leading: Icon(Icons.shopping_bag_outlined,color: Colors.black,),
                 title: Text('Your Orders',style: TextStyles.highlighterTwo,),
                 trailing: Icon(Icons.keyboard_arrow_right),
               ),
               ListTile(
-                leading: Icon(Feather.heart,color: Colors.black,),
+                leading: Icon(Icons.favorite_border,color: Colors.black,),
                 title: Text('Favorite Orders',style: TextStyles.highlighterTwo,),
                 trailing: Icon(Icons.keyboard_arrow_right),
               ),
               ListTile(
-                leading: Icon(FontAwesome.address_book_o,color: Colors.black,),
+                leading: Icon(Icons.contacts_outlined,color: Colors.black,),
                 title: Text('Address Book',style: TextStyles.highlighterTwo,),
                 trailing: Icon(Icons.keyboard_arrow_right),
               ),
               ListTile(
-                leading: Icon(MaterialCommunityIcons.message_reply_text,color: Colors.black,),
+                leading: Icon(Icons.chat_bubble_outline,color: Colors.black,),
                 title: Text('Online Ordering Help',style: TextStyles.highlighterTwo,),
                 trailing: Icon(Icons.keyboard_arrow_right),
               ),
               Divider(),
-              Text('food@word',style: TextStyles.actionTitleBlack,),
+              Text('food@work',style: TextStyles.actionTitleBlack,),
               ListTile(
-                leading: Icon(Feather.toggle_right,color: Colors.black,),
+                leading: Icon(Icons.toggle_on_outlined,color: Colors.black,),
                 title: Text('Enable',style: TextStyles.highlighterTwo,),
                 trailing: Icon(Icons.keyboard_arrow_right),
               ),
               Divider(),
               Text('Table Bookings',style: TextStyles.actionTitleBlack,),
               ListTile(
-                leading: Icon(FontAwesome.calendar_check_o,color: Colors.black,),
+                leading: Icon(Icons.event_available_outlined,color: Colors.black,),
                 title: Text('Your Bookings',style: TextStyles.highlighterTwo,),
                 trailing: Icon(Icons.keyboard_arrow_right),
               ),
               ListTile(
-                leading: Icon(MaterialCommunityIcons.message_reply_text,color: Colors.black,),
+                leading: Icon(Icons.chat_bubble_outline,color: Colors.black,),
                 title: Text('Table Reservation Help',style: TextStyles.highlighterTwo,),
                 trailing: Icon(Icons.keyboard_arrow_right),
               ),

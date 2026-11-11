@@ -1,34 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-
 import 'package:zoma_clone_flutter/constant/colors.dart';
 
+class AppSearchBar extends StatefulWidget {
+  final String hintText;
 
-class SearchBar extends StatelessWidget {
-  String hintText;
-  SearchBar(this.hintText);
+  const AppSearchBar(this.hintText, {super.key});
 
-  TextEditingController controller = new TextEditingController();
+  @override
+  State<AppSearchBar> createState() => _AppSearchBarState();
+}
+
+class _AppSearchBarState extends State<AppSearchBar> {
+  final TextEditingController controller = TextEditingController();
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: new Card(
+      child: Card(
         elevation: 0,
         shape: RoundedRectangleBorder(
-            side: BorderSide(
-              color: AppColors.separatorGrey,
-
-            ),
-            borderRadius: BorderRadius.circular(5)),
+          side: const BorderSide(
+            color: AppColors.separatorGrey,
+          ),
+          borderRadius: BorderRadius.circular(5),
+        ),
         color: Colors.white,
-        child: new ListTile(
+        child: ListTile(
           dense: true,
-          leading: new Icon(Ionicons.ios_search,color: Colors.black,),
-          title: new TextField(
+          leading: const Icon(Icons.search, color: Colors.black),
+          title: TextField(
             controller: controller,
-            decoration: new InputDecoration(
-                hintText: this.hintText, border: InputBorder.none),
+            decoration: InputDecoration(
+              hintText: widget.hintText,
+              border: InputBorder.none,
+            ),
           ),
         ),
       ),

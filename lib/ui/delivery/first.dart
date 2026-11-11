@@ -11,64 +11,63 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> with TickerProviderStateMixin {
-  TabController tabController;
+  late TabController tabController;
   @override
   void initState() {
     super.initState();
-    tabController = new TabController(length: 4, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
   }
 
   @override
   void dispose() {
+    tabController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
+    return Column(
 
-          children: <Widget>[
-            TabBar(
-              controller: tabController,
-              indicatorColor: AppColors.whiteColor,
-              labelColor: AppColors.errorStateLightRed,
-              unselectedLabelColor: Colors.black54,
-              isScrollable: true,
-              tabs: <Widget>[
-                Tab(
-                  child: Text(
-                    'food',
-                    style: TextStyle(fontSize: 20, letterSpacing: 2.0),
-                  ),
-                ),
-                Tab(
-                  child: Text(
-                    'grocery',
-                    style: TextStyle(fontSize: 20, letterSpacing: 2.0),
-                  ),
-                ),
-                Tab(
-                  child: Text(
-                    'food@work',
-                    style: TextStyle(fontSize: 20, letterSpacing: 2.0),
-                  ),
-                ),
-                Tab(
-                  child: Text(
-                    'self pickup',
-                    style: TextStyle(fontSize: 20, letterSpacing: 2.0),
-                  ),
-                ),
-              ],
-            ),
-        Expanded(
-          child: TabBarView(
+        children: <Widget>[
+          TabBar(
             controller: tabController,
-            children: <Widget>[FoodTab(), GroceryTab(), WorkTab(), SelfTab()],
+            indicatorColor: AppColors.whiteColor,
+            labelColor: AppColors.errorStateLightRed,
+            unselectedLabelColor: Colors.black54,
+            isScrollable: true,
+            tabs: <Widget>[
+              Tab(
+                child: Text(
+                  'food',
+                  style: TextStyle(fontSize: 20, letterSpacing: 2.0),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  'grocery',
+                  style: TextStyle(fontSize: 20, letterSpacing: 2.0),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  'food@work',
+                  style: TextStyle(fontSize: 20, letterSpacing: 2.0),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  'self pickup',
+                  style: TextStyle(fontSize: 20, letterSpacing: 2.0),
+                ),
+              ),
+            ],
           ),
-        )
-      ]),
-    );
+      Expanded(
+        child: TabBarView(
+          controller: tabController,
+          children: <Widget>[FoodTab(), GroceryTab(), WorkTab(), SelfTab()],
+        ),
+      )
+    ]);
   }
 }

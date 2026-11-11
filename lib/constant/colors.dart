@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppColors{
-  static var whiteColor;
+  static const Color whiteColor = Colors.white;
 
-  static var blackColor;
+  static const Color blackColor = Colors.black;
 
-  static var separatorGrey;
+  static const Color separatorGrey = Color(0xFFE0E0E0);
 
-  static var persianColor;
+  static const Color persianColor = Color(0xFF00A693);
 
   AppColors._();
   static const Color primaryTextColorBlue = Color(0xFF173143);

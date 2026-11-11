@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:zoma_clone_flutter/constant/colors.dart';
 import 'package:zoma_clone_flutter/constant/textstyles.dart';
 import 'package:zoma_clone_flutter/widgets/rating.dart';
@@ -42,7 +41,7 @@ class _DiningState extends State<Dining> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     Icon(
-                                      FontAwesome.filter,
+                                      Icons.filter_list,
                                       size: 18,
                                       color: AppColors.primaryTextColorGrey,
                                     ),
@@ -414,8 +413,8 @@ class _DiningState extends State<Dining> {
                 children: <Widget>[
                   Center(
                     child: Container(
-                      constraints:
-                      new BoxConstraints.expand(height: 200.0, width: 450),
+                      height: 200.0,
+                      width: double.infinity,
                       alignment: Alignment.bottomLeft,
                       padding:
                       new EdgeInsets.only(left: 16.0, bottom: 8.0, top: 8.0),
@@ -448,10 +447,10 @@ class _DiningState extends State<Dining> {
                               new StarRating(
                                 rating: rating1,
                                 onRatingChanged: (rating) =>
-                                    setState(() => this.rating = rating),
+                                    setState(() => this.rating1 = rating),
                               ),
                               SizedBox(width: 3.0,),
-                              Text('4.5',style: TextStyles.paragraphBold,),
+                              Text(rating1.toStringAsFixed(1),style: TextStyles.paragraphBold,),
                               SizedBox(width: 3.0,),
                               Text('(888 Dining Reviews)',style: TextStyles.paragraphdemibold,)
                             ],
@@ -493,8 +492,8 @@ class _DiningState extends State<Dining> {
                 children: <Widget>[
                   Center(
                     child: Container(
-                      constraints:
-                      new BoxConstraints.expand(height: 200.0, width: 450),
+                      height: 200.0,
+                      width: double.infinity,
                       alignment: Alignment.bottomLeft,
                       padding:
                       new EdgeInsets.only(left: 16.0, bottom: 8.0, top: 8.0),
@@ -539,7 +538,7 @@ class _DiningState extends State<Dining> {
                                     setState(() => this.rating = rating),
                               ),
                               SizedBox(width: 3.0,),
-                              Text('3.5',style: TextStyles.paragraphBold,),
+                              Text(rating.toStringAsFixed(1),style: TextStyles.paragraphBold,),
                               SizedBox(width: 3.0,),
                               Text('(108 Dining Reviews)',style: TextStyles.paragraphdemibold,)
                             ],

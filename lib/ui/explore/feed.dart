@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:zoma_clone_flutter/constant/colors.dart';
 import 'package:zoma_clone_flutter/constant/textstyles.dart';
 
@@ -41,13 +40,17 @@ class _FeedState extends State<Feed> {
                         radius: 20.0,
                         backgroundImage: NetworkImage('https://avatars1.githubusercontent.com/u/60895972?s=460&v=4'),
                       ),
-                      trailing: new OutlineButton(
-                          color: AppColors.highlighterPink,
-                          child: new Text("Follow",style: TextStyle(
-                              color: AppColors.highlighterPink
-                          ),),
+                      trailing: OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: AppColors.highlighterPink,
+                            side: const BorderSide(color: AppColors.highlighterPink),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                          ),
                           onPressed: null,
-                          shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(5.0))
+                          child: const Text(
+                            "Follow",
+                            style: TextStyle(color: AppColors.highlighterPink),
+                          ),
                       ),
                     ),
                     Divider(),
@@ -56,7 +59,7 @@ class _FeedState extends State<Feed> {
                         title: Text('Tea Villa Cafe'),
                         subtitle: Text('Indiranagar'),
                         leading: ClipRRect(borderRadius:BorderRadius.circular(10),child: Image.network('https://cdn.pixabay.com/photo/2015/05/15/14/55/cafe-768771__480.jpg',width: 50,height: 50,)),
-                        trailing: Icon(Feather.star)
+                        trailing: Icon(Icons.star_border)
                     ),
                     Container(
                       child: Padding(
@@ -71,21 +74,23 @@ class _FeedState extends State<Feed> {
                     ),
                     Container(
                       width: double.infinity,
-                      child: OutlineButton(
-
-                          highlightedBorderColor: AppColors.highlighterPink,
+                      child: OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: AppColors.highlighterPink,
+                            side: const BorderSide(color: AppColors.highlighterPink),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Icon(EvilIcons.arrow_down,color: AppColors.highlighterPink,),
+                              Icon(Icons.arrow_circle_down_outlined,color: AppColors.highlighterPink,),
                               SizedBox(width: 10,),
-                              new Text("Order Now",style: TextStyle(
+                              Text("Order Now",style: TextStyle(
                                   color: AppColors.highlighterPink
                               ),),
                             ],
                           ),
                           onPressed: (){},
-                          shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(5.0))
                       ),
                     ),
                     Text('Posted Yesterday',style: TextStyles.subText,),
@@ -95,14 +100,14 @@ class _FeedState extends State<Feed> {
                       children: <Widget>[
                         Row(
                           children: <Widget>[
-                            Icon(MaterialCommunityIcons.telegram),
+                            Icon(Icons.share_outlined),
                             SizedBox(width: 5,),
                             Text('Share')
                           ],
                         ),
                         Row(
                           children: <Widget>[
-                            Icon(AntDesign.like2),
+                            Icon(Icons.thumb_up_outlined),
                             SizedBox(width: 5,),
                             Text('Like')
                           ],
@@ -133,13 +138,17 @@ class _FeedState extends State<Feed> {
                         radius: 20.0,
                         backgroundImage: NetworkImage('https://avatars1.githubusercontent.com/u/60895972?s=460&v=4'),
                       ),
-                      trailing: new OutlineButton(
-                          color: AppColors.highlighterPink,
-                          child: new Text("Follow",style: TextStyle(
-                              color: AppColors.highlighterPink
-                          ),),
+                      trailing: OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: AppColors.highlighterPink,
+                            side: const BorderSide(color: AppColors.highlighterPink),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                          ),
                           onPressed: null,
-                          shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(5.0))
+                          child: const Text(
+                            "Follow",
+                            style: TextStyle(color: AppColors.highlighterPink),
+                          ),
                       ),
                     ),
                     Divider(),
@@ -148,7 +157,7 @@ class _FeedState extends State<Feed> {
                         title: Text('Corner House'),
                         subtitle: Text('Jayanagar'),
                         leading: ClipRRect(borderRadius:BorderRadius.circular(10),child: Image.network('https://cdn.pixabay.com/photo/2015/05/15/14/55/cafe-768771__480.jpg',width: 50,height: 50,)),
-                        trailing: Icon(Feather.star)
+                        trailing: Icon(Icons.star_border)
                     ),
                     Container(
                       child: Padding(
@@ -163,21 +172,23 @@ class _FeedState extends State<Feed> {
                     ),
                     Container(
                       width: double.infinity,
-                      child: OutlineButton(
-
-                          highlightedBorderColor: AppColors.highlighterPink,
+                      child: OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: AppColors.highlighterPink,
+                            side: const BorderSide(color: AppColors.highlighterPink),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Icon(EvilIcons.arrow_down,color: AppColors.highlighterPink,),
+                              Icon(Icons.arrow_circle_down_outlined,color: AppColors.highlighterPink,),
                               SizedBox(width: 10,),
-                              new Text("Order Now",style: TextStyle(
+                              Text("Order Now",style: TextStyle(
                                   color: AppColors.highlighterPink
                               ),),
                             ],
                           ),
                           onPressed: (){},
-                          shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(5.0))
                       ),
                     ),
                     Text('Posted Yesterday',style: TextStyles.subText,),
@@ -187,14 +198,14 @@ class _FeedState extends State<Feed> {
                       children: <Widget>[
                         Row(
                           children: <Widget>[
-                            Icon(MaterialCommunityIcons.telegram),
+                            Icon(Icons.share_outlined),
                             SizedBox(width: 5,),
                             Text('Share')
                           ],
                         ),
                         Row(
                           children: <Widget>[
-                            Icon(AntDesign.like2),
+                            Icon(Icons.thumb_up_outlined),
                             SizedBox(width: 5,),
                             Text('Like')
                           ],

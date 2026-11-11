@@ -1,47 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:zoma_clone_flutter/constant/colors.dart';
 
-typedef void RatingChangeCallback(double rating);
+typedef RatingChangeCallback = void Function(double rating);
 
 class StarRating extends StatelessWidget {
   final int starCount;
   final double rating;
-  final RatingChangeCallback onRatingChanged;
-  final Color color;
+  final RatingChangeCallback? onRatingChanged;
+  final Color? color;
 
-  StarRating({this.starCount = 5, this.rating = .0,
-  this.onRatingChanged, this.color});
+  const StarRating({
+    super.key,
+    this.starCount = 5,
+    this.rating = 0.0,
+    this.onRatingChanged,
+    this.color,
+  });
 
   Widget buildStar(BuildContext context, int index) {
     Icon icon;
     if (index >= rating) {
-      icon = new Icon(
+      icon = Icon(
         Icons.star_border,
-        color: Theme.of(context).buttonColor,
+        color: AppColors.primaryTextColorGrey,
       );
-    } 
-    else if (index > rating - 1 && index < rating) {
-      icon = new Icon(
+    } else if (index > rating - 1 && index < rating) {
+      icon = Icon(
         Icons.star_half,
         color: color ?? AppColors.errorStateLightRed,
       );
     } else {
-      icon = new Icon(
+      icon = Icon(
         Icons.star,
         color: color ?? AppColors.errorStateLightRed,
       );
     }
-    return new InkResponse(
-      onTap: onRatingChanged == null ? null : () =>
-      onRatingChanged(index + 1.0),
+    return InkResponse(
+      onTap: onRatingChanged == null
+          ? null
+          : () => onRatingChanged!(index + 1.0),
       child: icon,
     );
   }
- @override
-  Widget build(BuildContext context) {
-    return new Row(children: new List.generate(starCount, (
-      index
-    ) => buildStar(context, index)));
-  }
 
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: List.generate(
+        starCount,
+        (index) => buildStar(context, index),
+      ),
+    );
+  }
 }

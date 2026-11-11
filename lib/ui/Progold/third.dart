@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:zoma_clone_flutter/constant/colors.dart';
 import 'package:zoma_clone_flutter/constant/textstyles.dart';
 
@@ -34,7 +33,7 @@ class _ThirdPageState extends State<ThirdPage> {
               height: 10,
             ),
             Text(
-              'Inida (41 cities)',
+              'India (41 cities)',
               style: TextStyle(color: AppColors.blackColor, letterSpacing: 2),
             ),
             SizedBox(
@@ -46,130 +45,133 @@ class _ThirdPageState extends State<ThirdPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          selectedValue1=true;
-                          selectedValue2=false;
-                        });
-                      },
-                      child: Container(
-                        width: 170,
-                        height: 160,
-                        child: Card(
-                          elevation: 0,
-                          shape: BeveledRectangleBorder(
-                            side: BorderSide(
-                              color:selectedValue1==true?AppColors.gold:AppColors.separatorGrey,
-                              width: 1,
-                            ),
-                            borderRadius: BorderRadius.circular(3.0),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            selectedValue1=true;
+                            selectedValue2=false;
+                          });
+                        },
+                        child: SizedBox(
+                          height: 160,
+                          child: Card(
+                            elevation: 0,
+                            shape: BeveledRectangleBorder(
+                              side: BorderSide(
+                                color:selectedValue1==true?AppColors.gold:AppColors.separatorGrey,
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(3.0),
 
-                          ),
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                  padding: EdgeInsets.all(2),
-                                  width: double.infinity,
-                                  color: selectedValue1==true?AppColors.gold:AppColors.whiteColor,
-                                  child: Center(
+                            ),
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                    padding: EdgeInsets.all(2),
+                                    width: double.infinity,
+                                    color: selectedValue1==true?AppColors.gold:AppColors.whiteColor,
+                                    child: Center(
+                                      child: Text(
+                                        'Great Value',
+                                        style: TextStyle(color: selectedValue1==true?AppColors.whiteColor:AppColors.primaryTextColorGrey,),
+                                      ),
+                                    )),
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 10.0),
                                     child: Text(
-                                      'Great Value',
-                                      style: TextStyle(color: selectedValue1==true?AppColors.whiteColor:AppColors.primaryTextColorGrey,),
+                                      '12',
+                                      style: TextStyles.pageHeading,
                                     ),
-                                  )),
-                              Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 10.0),
-                                  child: Text(
-                                    '12',
-                                    style: TextStyles.pageHeading,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 10.0),
-                                  child: Text(
-                                    'months',
-                                    style: TextStyles.actionTitleBlack,
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 10.0),
+                                    child: Text(
+                                      'months',
+                                      style: TextStyles.actionTitleBlack,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 5.0),
-                                  child: Text(
-                                    'Rs. 1,800',
-                                    style: TextStyles.h1SubHeading,
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 5.0),
+                                    child: Text(
+                                      'Rs. 1,800',
+                                      style: TextStyles.h1SubHeading,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          selectedValue1=false;
-                          selectedValue2=true;
-                        });
-                      },
-                      child: Container(
-                        width: 170,
-                        height: 160,
-                        child: Card(
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            selectedValue1=false;
+                            selectedValue2=true;
+                          });
+                        },
+                        child: SizedBox(
+                          height: 160,
+                          child: Card(
 
-                          shape: BeveledRectangleBorder(
-                            side: BorderSide(
-                              color: selectedValue2==true?AppColors.gold:AppColors.whiteColor,
-                              width: 1.0,
+                            shape: BeveledRectangleBorder(
+                              side: BorderSide(
+                                color: selectedValue2==true?AppColors.gold:AppColors.separatorGrey,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(3.0),
+
                             ),
-                            borderRadius: BorderRadius.circular(3.0),
-
-                          ),
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                  padding: EdgeInsets.all(3),
-                                  width: double.infinity,
-                                  color: selectedValue2==true?AppColors.gold:AppColors.whiteColor,
-                                  child: Center(
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                    padding: EdgeInsets.all(3),
+                                    width: double.infinity,
+                                    color: selectedValue2==true?AppColors.gold:AppColors.whiteColor,
+                                    child: Center(
+                                      child: Text(
+                                        'Most Popular',
+                                        style: TextStyle(color: selectedValue2==true?AppColors.whiteColor:AppColors.primaryTextColorGrey,),
+                                      ),
+                                    )),
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 10.0),
                                     child: Text(
-                                      'Most Popular',
-                                      style: TextStyle(color: selectedValue2==true?AppColors.whiteColor:AppColors.primaryTextColorGrey,),
+                                      '6',
+                                      style: TextStyles.pageHeading,
                                     ),
-                                  )),
-                              Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 10.0),
-                                  child: Text(
-                                    '6',
-                                    style: TextStyles.pageHeading,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 10.0),
-                                  child: Text(
-                                    'months',
-                                    style: TextStyles.actionTitleBlack,
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 10.0),
+                                    child: Text(
+                                      'months',
+                                      style: TextStyles.actionTitleBlack,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 5.0),
-                                  child: Text(
-                                    'Rs. 999',
-                                    style: TextStyles.h1SubHeading,
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 5.0),
+                                    child: Text(
+                                      'Rs. 999',
+                                      style: TextStyles.h1SubHeading,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -186,15 +188,17 @@ class _ThirdPageState extends State<ThirdPage> {
               height: 70.0,
               padding: EdgeInsets.symmetric(horizontal: 15.0),
               width: double.infinity,
-              child: RaisedButton(
-
-color: AppColors.highlighterPink,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.highlighterPink,
+                  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                ),
                 onPressed: () {},
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text('Buy Now', style:TextStyles.actionTitleWhite),
-                    selectedValue1==true?Text('12 months membership @ Rs. 1200', style: TextStyles.paragraphdemibold1):Text('6 months membership @ Rs. 999', style: TextStyles.paragraphdemibold1),
+                    selectedValue1==true?Text('12 months membership @ Rs. 1,800', style: TextStyles.paragraphdemibold1):Text('6 months membership @ Rs. 999', style: TextStyles.paragraphdemibold1),
                   ],
                 ),
               ),
@@ -946,7 +950,7 @@ color: AppColors.highlighterPink,
 
                       ),
                       child: ListTile(
-                        leading: Icon(MaterialCommunityIcons.message_processing,color:Colors.green),
+                        leading: Icon(Icons.chat_outlined,color:Colors.green),
                         title: Text('Still need help? Chat with us.',style: TextStyle(
                           fontWeight: FontWeight.w600
                         ),),
@@ -964,7 +968,7 @@ color: AppColors.highlighterPink,
 
                       ),
                       child: ListTile(
-                        leading: Icon(MaterialIcons.error,color:AppColors.highlighterPink),
+                        leading: Icon(Icons.error,color:AppColors.highlighterPink),
                         title: Text('Terms and Conditions',style: TextStyle(
                             fontWeight: FontWeight.w600
                         ),),
